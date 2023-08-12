@@ -151,16 +151,16 @@ image_label.pack(side='left', padx=40, pady=25)
 #frame text welcome
 text_frame = Frame(root, bg='')
 text_frame.place(relx=0.5, rely=0.56, anchor='center')
-sb_label = tk.Label(text_frame, text = "Welcome to Smart Building", font=("Garamond", 50, 'italic'), fg = 'blue', bg='white')
+sb_label = tk.Label(text_frame, text = "Welcome to Smart Building", font=("Garamond", 50, 'italic'), fg = '#26428b', bg='white')
 sb_label.pack(pady=60)
 
-welcome_text = Label(text_frame, text="Kính Chào", font=("Garamond", 50, 'bold italic'), fg = 'yellow', bg='white', padx=150)
+welcome_text = Label(text_frame, text="Kính Chào", font=("Garamond", 50, 'bold italic'), fg = '#999900', bg='white', padx=150)
 welcome_text.pack(pady=20)
 
-name_text = Label(text_frame, text="PGS.TS Phạm Văn Tuấn", font=("Helvetica", 40, 'bold'), fg = '#0703fc', bg='white', padx=60)
+name_text = Label(text_frame, text="PGS.TS Phạm Văn Tuấn", font=("Helvetica", 40, 'bold'), fg = '#26428b', bg='white', padx=60)
 name_text.pack(pady=20)
 
-tilte_text = Label(text_frame, text="Trưởng Phòng Khảo thí và đảm bảo chất lượng giáo dục DUT", font=("Helvetica", 40, 'italic'), fg = '#0703fc', bg='white', padx=50, wraplength=1000)
+tilte_text = Label(text_frame, text="Trưởng Phòng Khảo thí và đảm bảo chất lượng giáo dục DUT", font=("Helvetica", 40, 'italic'), fg = '#26428b', bg='white', padx=50, wraplength=1000)
 tilte_text.pack(pady=20)
 
 
