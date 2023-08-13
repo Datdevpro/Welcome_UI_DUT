@@ -5,7 +5,7 @@ import math
 from datetime import datetime
 import time 
 
-#set up window
+#set up window screen
 root = tk.Tk()
 width = root.winfo_screenwidth()
 height = root.winfo_screenheight()
@@ -13,14 +13,14 @@ root.geometry("%dx%d" % (width, height))
 root['background']='#CCFFFF'
 root.title("Welcome")
 root.resizable(False,False) # cho phép resize cửa sổ hay không
-#root.columnconfigure(3, weight=3)
 
+## set up function needed
 #function resize image
 def resize_image(image, new_width, new_height):
     resized_image = image.resize((new_width, new_height))
     return resized_image
 
-# hàm resize ảnh open
+# function resize and open image
 def open_resize(image):
     global width, height
     open_img = Image.open(image)
@@ -28,7 +28,7 @@ def open_resize(image):
     main_img = ImageTk.PhotoImage(resize_img)
     return main_img
 
-#hàm update background
+# function auto update background via seasons
 def auto_update_background():
     now = datetime.now()
     day = now.day
@@ -48,12 +48,11 @@ def auto_update_background():
 
     root.after(3600000*24, auto_update_background)
 
-# ảnh background    
+# image background    
 spring_image = open_resize("welcome_UI/muaxuan.jpg")
 winter_image = open_resize("welcome_UI/muadong.jpg")
 summer_image = open_resize("welcome_UI/muahe.jpg")
 autumn_image = open_resize("welcome_UI/muathu.jpg")
-
 default_bg = "welcome_UI/muaxuan.jpg"
 bg_img = open_resize(default_bg)
 bg_label = Label(root, image = bg_img)
@@ -120,7 +119,7 @@ def update_clock():
     canvas.after(1000, update_clock)
 update_clock()
 
-# #date time func
+# date time func
 def date_time():
     now = datetime.now()
     date_string = now.strftime("%A, %d %B %Y")
@@ -131,11 +130,10 @@ date_label.pack(pady = 10)
 date_time()
 
 
-# frame ảnh
+# frame logo
 img_frame = tk.Frame(root, bg='')
 #img_frame.pack(side='top', fill=None, expand=False) #side='top', fill=None, expand = False
 img_frame.place(relx=0.5, rely=0, anchor='n')
-
 image2 = Image.open("welcome_UI/dhdn.jpg")
 resize_img2 = resize_image(image2, 200, 200)
 tk_img2 = ImageTk.PhotoImage(resize_img2)
