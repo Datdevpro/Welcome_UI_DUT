@@ -4,7 +4,7 @@ from PIL import ImageTk, Image
 import math 
 from datetime import datetime
 import time 
-
+#init
 #set up window screen
 root = tk.Tk()
 width = root.winfo_screenwidth()
