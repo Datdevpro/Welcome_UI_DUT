@@ -63,7 +63,7 @@ auto_update_background()
 # clock animation
 WIDTH = 160
 HEIGHT = 160
-clock_frame = Frame(root,bg='')
+clock_frame = Frame(root,bg='white')
 clock_frame.place(relx=0.972, rely=0.02,  anchor="ne")
 canvas = tk.Canvas(clock_frame, width=WIDTH, height=HEIGHT,bg='white', highlightthickness=0)
 canvas.pack()
@@ -131,7 +131,7 @@ date_time()
 
 
 # frame logo
-img_frame = tk.Frame(root, bg='')
+img_frame = tk.Frame(root, bg='white')
 #img_frame.pack(side='top', fill=None, expand=False) #side='top', fill=None, expand = False
 img_frame.place(relx=0.5, rely=0, anchor='n')
 image2 = Image.open("welcome_UI/dhdn.jpg")
@@ -147,7 +147,7 @@ image_label.pack(side='left', padx=40, pady=25)
 
 
 #frame text welcome
-text_frame = Frame(root, bg='')
+text_frame = Frame(root, bg='white')
 text_frame.place(relx=0.5, rely=0.56, anchor='center')
 sb_label = tk.Label(text_frame, text = "Welcome to Smart Building", font=("Pinyon Script", 50, 'bold italic'), fg = '#0b5394', bg='white')
 sb_label.pack(pady=60)
