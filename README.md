@@ -1,1 +1,2 @@
-## Run the following code from file requirement.txt in terminal to install all package needed for program
+## Run the following code in terminal to install all package needed for program
+# pip install -r Requirement.txt
