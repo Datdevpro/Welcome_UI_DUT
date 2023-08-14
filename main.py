@@ -4,7 +4,7 @@ from PIL import ImageTk, Image
 import math 
 from datetime import datetime
 import time 
-#init
+
 #set up window screen
 root = tk.Tk()
 width = root.winfo_screenwidth()
@@ -61,8 +61,8 @@ auto_update_background()
 
 
 # clock animation
-WIDTH = 160
-HEIGHT = 160
+WIDTH = 300
+HEIGHT = 300
 clock_frame = Frame(root,bg='white')
 clock_frame.place(relx=0.972, rely=0.02,  anchor="ne")
 canvas = tk.Canvas(clock_frame, width=WIDTH, height=HEIGHT,bg='white', highlightthickness=0)
@@ -75,16 +75,16 @@ def update_clock():
     second = now.tm_sec
  
     # Draw clock face
-    canvas.create_oval(2, 2, WIDTH, HEIGHT, outline="gray", width=2)
+    canvas.create_oval(2, 2, WIDTH-8, HEIGHT-8, outline="green", width=5)
     # Draw hour numbers
     for i in range(12):
         angle = i * math.pi/6 - math.pi/2
         x = WIDTH/2 + 0.7 * WIDTH/2 * math.cos(angle)
         y = HEIGHT/2 + 0.7 * WIDTH/2 * math.sin(angle)
         if i == 0:
-            canvas.create_text(x, y-10, text=str(i+12), font=("Helvetica", 12))
+            canvas.create_text(x, y, text=str(i+12), font=("Helvetica", 13))
         else:
-            canvas.create_text(x, y, text=str(i), font=("Helvetica", 12))
+            canvas.create_text(x, y, text=str(i), font=("Helvetica", 13))
  
     # Draw minute lines
     for i in range(60):
@@ -125,7 +125,7 @@ def date_time():
     date_string = now.strftime("%A, %d %B %Y")
     date_label.config(text=date_string)
     date_label.after(1000, date_time)
-date_label = Label(clock_frame, font=('Helvetica', 14), bg="white")
+date_label = Label(clock_frame, font=('Helvetica', 15), bg="white")
 date_label.pack(pady = 10)
 date_time()
 
@@ -134,13 +134,13 @@ date_time()
 img_frame = tk.Frame(root, bg='white')
 #img_frame.pack(side='top', fill=None, expand=False) #side='top', fill=None, expand = False
 img_frame.place(relx=0.5, rely=0, anchor='n')
-image2 = Image.open("welcome_UI/dhdn.jpg")
+image2 = Image.open("welcome_UI/UDN.png")
 resize_img2 = resize_image(image2, 200, 200)
 tk_img2 = ImageTk.PhotoImage(resize_img2)
 image_label2 = Label(img_frame, image=tk_img2)
 image_label2.pack(side='left', padx=40, pady=25)  
 image = Image.open("welcome_UI/DUT.jpg")
-resize_img = resize_image(image, 200, 197)
+resize_img = resize_image(image, 200, 200)
 tk_img = ImageTk.PhotoImage(resize_img)
 image_label = Label(img_frame, image=tk_img)
 image_label.pack(side='left', padx=40, pady=25) 
@@ -148,9 +148,9 @@ image_label.pack(side='left', padx=40, pady=25)
 
 #frame text welcome
 text_frame = Frame(root, bg='white')
-text_frame.place(relx=0.5, rely=0.56, anchor='center')
+text_frame.place(relx=0.5, rely=0.58, anchor='center')
 sb_label = tk.Label(text_frame, text = "Welcome to Smart Building", font=("Pinyon Script", 50, 'bold italic'), fg = '#0b5394', bg='white')
-sb_label.pack(pady=60)
+sb_label.pack(pady=40)
 
 welcome_text = Label(text_frame, text="Kính Chào", font=("Montserrat", 50, 'bold'), fg = '#9db521', bg='white', padx=150)
 welcome_text.pack(pady=20)
