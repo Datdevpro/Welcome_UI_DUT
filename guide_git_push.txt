@@ -1,0 +1,6 @@
+1. git init (if not init git )
+2. git remote add origin <url to git>
+3. git status ( check if not add changes )
+4. git add . ( add all changes )
+5. git commit -m "message"
+6. git push origin < default branch >

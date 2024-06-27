@@ -18,6 +18,8 @@ def UI_display(rank, name, title, position):
     root.title("Welcome")
     root.resizable(False,False) # cho phép resize cửa sổ hay không
 
+
+
     ##### INITIAL INPUT
     rank = rank
     name = name
