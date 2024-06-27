@@ -7,7 +7,7 @@ import time
 
 # name: tên, rank: học hàm, title: chức vụ
 
-def UI_display():
+def UI_display(rank, name, title, position):
     #set up window screen
     root = tk.Tk()
     global width, height
@@ -17,6 +17,21 @@ def UI_display():
     root['background']='#CCFFFF'
     root.title("Welcome")
     root.resizable(False,False) # cho phép resize cửa sổ hay không
+
+    ##### INITIAL INPUT
+    rank = rank
+    name = name
+    title = title
+    position = position
+    ###### Exxample: 
+    """
+    # rank = "PGS "
+    # name = "Phạm Văn Tuấn"
+    # title = "Trưởng phòng "
+    # position = "Phòng khảo thí và chất lượng đảm bảo giáo dục
+    """
+
+
 
     ## set up function needed
     #function resize image
@@ -160,10 +175,10 @@ def UI_display():
     welcome_text = Label(text_frame, text="Kính Chào", font=("Montserrat", 50, 'bold'), fg = '#9db521', bg='white', padx=150)
     welcome_text.pack(pady=20)
 
-    rank = "PGS "
-    name = "Phạm Văn Tuấn"
-    title = "Trưởng phòng "
-    position = "Phòng khảo thí và chất lượng đảm bảo giáo dục"
+    # rank = "PGS "
+    # name = "Phạm Văn Tuấn"
+    # title = "Trưởng phòng "
+    # position = "Phòng khảo thí và chất lượng đảm bảo giáo dục"
     name_text = Label(text_frame, text=rank+name, font=("Arial", 40, 'bold'), fg = '#0b5394', bg='white', padx=60)
     name_text.pack(pady=20)
 
