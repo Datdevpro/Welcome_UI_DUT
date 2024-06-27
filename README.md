@@ -1,4 +1,4 @@
 ## Usage
-`git status
-git add
-git commit`
+
+'''bash
+pip insall
